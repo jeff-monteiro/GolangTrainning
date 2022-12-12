@@ -6,7 +6,7 @@ fun main(){
     balanceAccount = 100.00
     balanceAccount += 20.00
 
-    println("Holder $holder")
-    println("Account number : $accountNumber")
+    println("Holder: $holder")
+    println("Account number: $accountNumber")
     println("Balance: $balanceAccount")
 }
