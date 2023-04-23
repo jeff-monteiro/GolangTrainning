@@ -3,18 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	name := "Jefferson Monteiro"
-	version := 1.1
-	fmt.Println("Faaaala galera! Meu nome é ", name)
-	fmt.Println("A versão do GO é a ", version)
 
-	fmt.Println("1- Iniciar Monitoramento")
-	fmt.Println("2- Exibir Logs")
-	fmt.Println("0- Sair do Programa")
-
-	var comando int
-	fmt.Scan(&comando) //That's a reference variable
-	fmt.Println("O comando escolhido foi", comando)
+	showIntro()
+	showMenu()
 
 	// if comando == 1 {
 	// 	fmt.Println("Iniciando Monitoramento...")
@@ -25,7 +16,7 @@ func main() {
 	// } else {
 	// 	fmt.Println("Não conheço esse comando")
 	// }
-
+	comando := readCommand()
 	switch comando {
 	case 1:
 		fmt.Println("Iniciando Monitoramento...")
@@ -36,4 +27,25 @@ func main() {
 	default:
 		fmt.Println("Não conheço esse comando")
 	}
+}
+
+// Modularizando minha aplicação
+func showIntro() {
+	name := "Jefferson Monteiro"
+	version := 1.1
+	fmt.Println("Faaaala galera! Meu nome é ", name)
+	fmt.Println("A versão do GO é a ", version)
+}
+
+func showMenu() {
+	fmt.Println("1- Iniciar Monitoramento")
+	fmt.Println("2- Exibir Logs")
+	fmt.Println("0- Sair do Programa")
+}
+
+func readCommand() int {
+	var command int
+	fmt.Scan(&command) //That's a reference variable
+	fmt.Println("O comando escolhido foi", command)
+	return command
 }
