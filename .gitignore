@@ -1,4 +1,4 @@
 ./bin
 ./pkg
 
-log.txt
+./src/log.txt
