@@ -1,18 +1,22 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
-const monitorizing = 5
+const monitorizing = 3
 const delay = 5
 
 func main() {
 
 	showIntro()
+	readFileSite()
 	for {
 		showMenu()
 
@@ -65,11 +69,11 @@ func readCommand() int {
 
 func startMonitorizing() {
 	fmt.Println("Iniciando Monitoramento...")
-	sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://caelum.com.br"}
-	fmt.Println(sites)
+	// sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://caelum.com.br"}
+	sites := readFileSite()
 	for i := 0; i < monitorizing; i++ {
 		for i, site := range sites {
-			fmt.Println(i, site)
+			fmt.Println(i, ":", site)
 			testSiteUp(site)
 
 		}
@@ -80,11 +84,36 @@ func startMonitorizing() {
 }
 
 func testSiteUp(site string) {
-	respo, _ := http.Get(site)
+	respo, err := http.Get(site)
 
+	if err != nil {
+		fmt.Println("Page Not Found", err)
+	}
 	if respo.StatusCode == 200 {
 		fmt.Println("Site", site, "carregou com sucesso...OK!")
 	} else {
 		fmt.Println("Error!", site, "site não pôde ser carregado! StatusCode:", respo.StatusCode)
 	}
+}
+
+func readFileSite() []string {
+	var sites []string
+
+	file, err := os.Open("File.txt")
+	// file, err := ioutil.ReadFile("File.txt")
+
+	if err != nil {
+		fmt.Println("Error!", err)
+	}
+	reader := bufio.NewReader(file)
+	for {
+		line, err := reader.ReadString('\n')
+		line = strings.TrimSpace(line)
+		sites = append(sites, line)
+		if err == io.EOF {
+			break
+		}
+	}
+	file.Close()
+	return sites
 }
