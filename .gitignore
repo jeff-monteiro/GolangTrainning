@@ -1,4 +1,2 @@
-./bin
-./pkg
-
-./src/siteMonitor/log.txt
+../bin
+../pkg
