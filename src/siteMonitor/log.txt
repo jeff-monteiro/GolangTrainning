@@ -8,3 +8,12 @@
 24/04/2023 17:15:26 - https://random-status-code.herokuapp.com/ - online false
 24/04/2023 17:15:26 - https://www.alura.com.br - online true
 24/04/2023 17:15:27 - https://caelum.com.br - online true
+27/04/2023 09:29:34 - https://random-status-code.herokuapp.com/ - online false
+27/04/2023 09:29:35 - https://www.alura.com.br - online true
+27/04/2023 09:29:37 - https://caelum.com.br - online true
+27/04/2023 09:29:42 - https://random-status-code.herokuapp.com/ - online false
+27/04/2023 09:29:43 - https://www.alura.com.br - online true
+27/04/2023 09:29:43 - https://caelum.com.br - online true
+27/04/2023 09:29:49 - https://random-status-code.herokuapp.com/ - online false
+27/04/2023 09:29:49 - https://www.alura.com.br - online true
+27/04/2023 09:29:50 - https://caelum.com.br - online true
