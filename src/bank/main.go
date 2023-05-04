@@ -15,4 +15,13 @@ func main() {
 	fmt.Println(contaJefferson)
 	fmt.Println(contaJoelma)
 
+	//Other way to use Struct
+	var contaDaCris *ContaCorrente
+	contaDaCris = new(ContaCorrente)
+	contaDaCris.titular = "Cris"
+	contaDaCris.numeroConta = 876687
+	contaDaCris.numeroAgencia = 001
+	contaDaCris.saldoConta = 1000.23
+
+	fmt.Println(contaDaCris)
 }
