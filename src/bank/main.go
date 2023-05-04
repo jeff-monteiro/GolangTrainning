@@ -21,9 +21,9 @@ func (c *ContaCorrente) Sacar(valorSaque float64) string {
 }
 
 // Calculate deposit from TPM
-func (c *ContaCorrente) Depositar(valorDoDeposito float64) {
+func (c *ContaCorrente) Depositar(valorDoDeposito float64) string {
 	c.saldoConta += valorDoDeposito
-
+	return "Deposito feito com sucesso!"
 }
 
 func main() {
