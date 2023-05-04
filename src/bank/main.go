@@ -20,6 +20,12 @@ func (c *ContaCorrente) Sacar(valorSaque float64) string {
 	}
 }
 
+// Calculate deposit from TPM
+func (c *ContaCorrente) Depositar(valorDoDeposito float64) {
+	c.saldoConta += valorDoDeposito
+
+}
+
 func main() {
 	contaJefferson := ContaCorrente{}
 	contaJefferson.titular = "Jefferson"
