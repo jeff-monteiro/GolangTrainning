@@ -9,19 +9,25 @@ type ContaCorrente struct {
 	saldoConta    float64
 }
 
+// Calculate withdraw from TPM
+func (c *ContaCorrente) Sacar(valorSaque float64) string {
+	podeSacar := valorSaque > 0 && valorSaque <= c.saldoConta
+	if podeSacar {
+		c.saldoConta -= valorSaque
+		return "Saque realizado com sucesso"
+	} else {
+		return "Saque não realizado"
+	}
+}
+
 func main() {
-	contaJefferson := ContaCorrente{"Jefferson", 589, 256934, 3000.05}
-	contaJoelma := ContaCorrente{"Joelma", 123, 568784, 7000.01}
-	fmt.Println(contaJefferson)
-	fmt.Println(contaJoelma)
+	contaJefferson := ContaCorrente{}
+	contaJefferson.titular = "Jefferson"
+	contaJefferson.saldoConta = 800
 
-	//Other way to use Struct
-	var contaDaCris *ContaCorrente
-	contaDaCris = new(ContaCorrente)
-	contaDaCris.titular = "Cris"
-	contaDaCris.numeroConta = 876687
-	contaDaCris.numeroAgencia = 001
-	contaDaCris.saldoConta = 1000.23
+	fmt.Println(contaJefferson.saldoConta)
 
-	fmt.Println(contaDaCris)
+	fmt.Println(contaJefferson.Sacar(-100))
+	fmt.Println(contaJefferson.saldoConta)
+
 }
