@@ -31,6 +31,7 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 
 }
 
+// Make transfer between accounts
 func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *ContaCorrente) bool {
 	if valorDaTransferencia <= c.saldoConta && valorDaTransferencia > 0 {
 		c.saldoConta -= valorDaTransferencia
