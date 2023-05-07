@@ -1,7 +1,10 @@
 package contas
 
+import "bank/clientes"
+
+// Using composition on struct(it's used struct inside struct)
 type ContaCorrente struct {
-	Titular       string
+	Titular       clientes.Titular
 	NumeroConta   int
 	NumeroAgencia int
 	SaldoConta    float64
