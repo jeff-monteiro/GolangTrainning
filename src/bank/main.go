@@ -12,7 +12,7 @@ func main() {
 		Nome:      "Jefferson",
 		CPF:       "123.222.111.33",
 		Profissão: "Desenvolvedor"},
-		NumeroAgencia: 325698, NumeroConta: 123}
+		NumeroAgencia: 325698, NumeroConta: 123, SaldoConta: 200}
 
 	fmt.Println(contaJeff)
 

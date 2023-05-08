@@ -1,6 +1,8 @@
 package contas
 
-import "bank/clientes"
+import (
+	"bank/clientes"
+)
 
 // Using composition on struct(it's used struct inside struct)
 type ContaCorrente struct {
