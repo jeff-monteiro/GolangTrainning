@@ -9,14 +9,14 @@ type ContaCorrente struct {
 	Titular       clientes.Titular
 	NumeroConta   int
 	NumeroAgencia int
-	SaldoConta    float64
+	saldoConta    float64
 }
 
 // Calculate withdraw from TPM
 func (c *ContaCorrente) Sacar(valorSaque float64) string {
-	podeSacar := valorSaque > 0 && valorSaque <= c.SaldoConta
+	podeSacar := valorSaque > 0 && valorSaque <= c.saldoConta
 	if podeSacar {
-		c.SaldoConta -= valorSaque
+		c.saldoConta -= valorSaque
 		return "Saque realizado com sucesso"
 	} else {
 		return "Saque não realizado"
@@ -26,21 +26,25 @@ func (c *ContaCorrente) Sacar(valorSaque float64) string {
 // Calculate deposit from TPM || função com multiplos retornos
 func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 	if valorDoDeposito > 0 {
-		c.SaldoConta += valorDoDeposito
-		return "Deposito feito com sucesso!", c.SaldoConta
+		c.saldoConta += valorDoDeposito
+		return "Deposito feito com sucesso!", c.saldoConta
 	} else {
-		return "O valor do depósito menor que zero!", c.SaldoConta
+		return "O valor do depósito menor que zero!", c.saldoConta
 	}
 
 }
 
 // Make transfer between accounts
 func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *ContaCorrente) bool {
-	if valorDaTransferencia <= c.SaldoConta && valorDaTransferencia > 0 {
-		c.SaldoConta -= valorDaTransferencia
+	if valorDaTransferencia <= c.saldoConta && valorDaTransferencia > 0 {
+		c.saldoConta -= valorDaTransferencia
 		contaDestino.Depositar(valorDaTransferencia)
 		return true
 	} else {
 		return false
 	}
+}
+
+func (c *ContaCorrente) ObterSaldo() float64 {
+	return c.saldoConta
 }
