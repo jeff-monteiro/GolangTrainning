@@ -45,6 +45,7 @@ func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *C
 	}
 }
 
+// Allow get balance
 func (c *ContaCorrente) ObterSaldo() float64 {
 	return c.saldoConta
 }
