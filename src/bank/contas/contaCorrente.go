@@ -6,10 +6,9 @@ import (
 
 // Using composition on struct(it's used struct inside struct)
 type ContaCorrente struct {
-	Titular       clientes.Titular
-	NumeroConta   int
-	NumeroAgencia int
-	saldoConta    float64
+	Titular                    clientes.Titular
+	NumeroConta, NumeroAgencia int
+	saldoConta                 float64
 }
 
 // Calculate withdraw from TPM
