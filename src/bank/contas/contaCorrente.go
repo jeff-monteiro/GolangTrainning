@@ -48,3 +48,9 @@ func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *C
 func (c *ContaCorrente) ObterSaldo() float64 {
 	return c.saldoConta
 }
+
+// Allow make payments with current account
+func (c *ContaCorrente) PagarBoletoContaCorrente(valorDoBoleto float64) (string, float64) {
+	c.saldoConta -= valorDoBoleto
+	return "Depósito feito com sucesso", c.ObterSaldo()
+}

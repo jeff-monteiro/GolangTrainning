@@ -36,3 +36,9 @@ func (c *ContaPoupanca) Depositar(valorDoDeposito float64) (string, float64) {
 func (c *ContaPoupanca) ObterSaldo() float64 {
 	return c.saldoConta
 }
+
+// Allow make payments with current account
+func (c *ContaPoupanca) PagarBoletoContaCorrente(valorDoBoleto float64) (string, float64) {
+	c.saldoConta -= valorDoBoleto
+	return "Depósito feito com sucesso", c.ObterSaldo()
+}
