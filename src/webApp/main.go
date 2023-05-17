@@ -19,5 +19,11 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	temp.ExecuteTemplate(w, "Index", nil)
+	produtos := []Product{
+		{"Camisa", "Vermelha Ferrari", 29.90, 8},
+		{"Blusão", "Preto com capus", 129.90, 7},
+		{"Tenis", "Adidas Premium", 230.30, 4},
+		{"Relógio", "Mormaii Preto Fosco", 500.80, 2},
+	}
+	temp.ExecuteTemplate(w, "Index", produtos)
 }
