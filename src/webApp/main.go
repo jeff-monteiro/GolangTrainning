@@ -26,4 +26,5 @@ func index(w http.ResponseWriter, r *http.Request) {
 		{"Relógio", "Mormaii Preto Fosco", 500.80, 2},
 	}
 	temp.ExecuteTemplate(w, "Index", produtos)
+
 }
