@@ -48,7 +48,7 @@ func main() {
 
 }
 
-// Modularizando minha aplicação
+// Modularizing my application
 func showIntro() {
 	name := "Jefferson Monteiro"
 	version := 1.1
