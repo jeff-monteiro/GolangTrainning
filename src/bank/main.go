@@ -26,4 +26,5 @@ func main() {
 	PagarBoleto(&contaLuiza, 400)
 
 	fmt.Println(contaLuiza.ObterSaldo())
+	fmt.Println("Testando tudo")
 }
