@@ -40,4 +40,12 @@ func main() {
 
 	//STRING FIM
 
+	//BOOLEAN INICIO
+
+	var booleano1 bool = true
+	fmt.Println(booleano1)
+
+	booleano2 := false
+	fmt.Println(booleano2)
+
 }
