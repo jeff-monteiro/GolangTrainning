@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 
@@ -47,5 +50,10 @@ func main() {
 
 	booleano2 := false
 	fmt.Println(booleano2)
+
+	//DATA TYPE ERROR
+
+	var erro error = errors.New("Erro interno")
+	fmt.Println(erro)
 
 }
