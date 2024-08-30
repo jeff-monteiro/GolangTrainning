@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// Data Types
 func main() {
 
 	// INT INICIO
@@ -14,7 +15,7 @@ func main() {
 	var numero2 uint32 = 1000
 	fmt.Println(numero2)
 
-	//alias
+	//alias == apelido
 	//RUNE é um alias para int32
 	//BYTE é um alias para uint8
 
