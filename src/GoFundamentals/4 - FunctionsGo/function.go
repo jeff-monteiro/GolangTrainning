@@ -14,6 +14,9 @@ func main() {
 		fmt.Println("Hello World!")
 	}
 	f()
+
+	resultadoSoma, resultadoSubt := calcMath(10, 15)
+	fmt.Println(resultadoSoma, resultadoSubt)
 }
 
 func sayHello(name string, age int) {
@@ -29,4 +32,12 @@ func dataPrint() {
 	for i := 0; i <= data; i++ {
 		fmt.Println(i)
 	}
+}
+
+// Return multiple values
+func calcMath(n1, n2 int8) (int8, int8) {
+	soma := n1 + n2
+	subtracao := n1 - n2
+
+	return soma, subtracao
 }
