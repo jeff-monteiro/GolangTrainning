@@ -9,6 +9,11 @@ func main() {
 	printOut(12)
 	dataPrint()
 
+	// Anonymous function
+	var f = func() {
+		fmt.Println("Hello World!")
+	}
+	f()
 }
 
 func sayHello(name string, age int) {
